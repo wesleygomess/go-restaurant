@@ -1,6 +1,10 @@
 import styled, { css } from 'styled-components';
 
-export const Container = styled.div`
+interface ContainerProps {
+  avaliable: boolean;
+}
+
+export const Container = styled.div<ContainerProps>`
   background: #f0f0f5;
   border-radius: 8px;
 
@@ -13,7 +17,7 @@ export const Container = styled.div`
     text-align: center;
 
     ${props =>
-    !props.available &&
+    !props.avaliable &&
     css`
         opacity: 0.3;
       `};
